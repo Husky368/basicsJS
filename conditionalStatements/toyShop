@@ -1,0 +1,33 @@
+function toyShop(input){
+    //1.	Цена на екскурзията - реално число в интервала [1.00 … 10000.00]
+    //2.	Брой пъзели - цяло число в интервала [0… 1000]
+    //3.	Брой говорещи кукли - цяло число в интервала [0 … 1000]
+    //4.	Брой плюшени мечета - цяло число в интервала [0 … 1000]
+    //5.	Брой миньони - цяло число в интервала [0 … 1000]
+    //6.	Брой камиончета - цяло число в интервала [0 … 1000]
+    let tipPrice = Number(input[0])
+    let puzzles = Number(input[1])
+    let dolls = Number(input[2])
+    let bears = Number(input[3])
+    let minions = Number(input[4])
+    let trucks = Number(input[5])
+    //•	Пъзел - 2.60 лв.
+    //•	Говореща кукла - 3 лв.
+    //•	Плюшено мече - 4.10 лв.
+    //•	Миньон - 8.20 лв.
+    //•	Камионче - 2 лв.
+    let sum = (puzzles * 2.6) + (dolls * 3) + (bears * 4.1) + (minions * 8.2) + (trucks * 2)
+    let amount = puzzles + dolls + bears + minions + trucks
+    if(amount>= 50){
+        sum*= 0.75
+    }
+    sum *= 0.9
+    if(sum>=tipPrice){
+        let left= sum - tipPrice
+        console.log(`Yes! ${left.toFixed(2)} lv left.`);
+    }
+    else{
+        let need= tipPrice - sum
+        console.log(`Not enough money! ${need.toFixed(2)} lv needed.`)
+    }
+}
