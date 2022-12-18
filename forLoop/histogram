@@ -1,0 +1,32 @@
+function histogram(input) {
+    let n = Number(input[0])
+    let percent = 100/n
+    let p1 = 0
+    let p2 = 0
+    let p3 = 0
+    let p4 = 0
+    let p5 = 0
+    for (let i = 1; i <= n; i++) {
+        let current = Number(input[i])
+        if (current <= 199) {
+            p1+=percent
+        }
+        else if (current <= 399) {
+            p2+= percent
+        }
+        else if (current <= 599) {
+            p3+= percent
+        }
+        else if (current <= 799) {
+            p4+= percent
+        }
+        else {
+            p5+=percent
+        }
+    }
+    console.log(`${p1.toFixed(2)}%`)
+    console.log(`${p2.toFixed(2)}%`)
+    console.log(`${p3.toFixed(2)}%`)
+    console.log(`${p4.toFixed(2)}%`)
+    console.log(`${p5.toFixed(2)}%`)
+}
